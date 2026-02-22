@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Mai Sayang ❤️🐈💜</title>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #ff9ecf, #ffc1e3, #b5e3ff, #ffd6f6);
+    animation: bgMove 20s infinite alternate;
+}
+
+/* Animate background */
+@keyframes bgMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Glass card */
+.container {
+    position: relative;
+    z-index: 10;
+    max-width: 650px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 25px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px #ff99cc;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.8em;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: hotpink;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: pink;
+    color: white;
+    transform: scale(1.1);
+}
+
+#surprise {
+    display: none;
+    margin-top: 20px;
+    font-size: 1.3em;
+}
+
+/* Floating hearts */
+.heart {
+    position: absolute;
+    bottom: -50px;
+    color: pink;
+    font-size: 20px;
+    animation: floatUp 8s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {transform: translateY(0) scale(1); opacity: 1;}
+    50% {transform: translateY(-40vh) scale(1.2); opacity: 0.8;}
+    100% {transform: translateY(-100vh) scale(0.8); opacity: 0;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<!-- Audio (replace with your own) -->
+<audio id="bgMusic" src="sointoyou.mp3"></audio>
+
+<div class="container">
+    <h1>Selamat Hari Jadi, Mai Sayang ❤️🐈💜</h1>
+
+    <p>
+        Terima kasih sebab sentiasa ada untuk baby  
+        dan jadikan baby lebih bahagia setiap hari.  
+        Baby akan pilih Sayang hari ini, esok, dan selamanya. 🌸  
+        Baby sayang Sayang sangat-sangat. 💕
+    </p>
+
+    <button onclick="showMessage()">Klik Untuk Surprise 💖</button>
+
+    <div id="surprise">
+        Mai Sayang adalah cinta hati baby,  
+        dan baby nak dengan Sayang sampai tua nanti. 💍❤️
+    </div>
+</div>
+
+<script>
+// Show message & play music
+function showMessage() {
+    document.getElementById("surprise").style.display = "block";
+    document.getElementById("bgMusic").play();
+}
+
+// Generate floating hearts
+for(let i=0; i<30; i++){
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 25) + "px";
+    document.body.appendChild(heart);
+
+    setInterval(()=>{
+        heart.style.left = Math.random() * 100 + "vw";
+    }, 8000);
+}
+</script>
+
+</body>
+</html>
